@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Rink SAUNAのバレルサウナを外観・室内から確認できる3D参考モデルです。">
+  <title>Rink SAUNA｜3Dで見る</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/showroom.css">
+  <script src="../assets/vendor/three/three.min.js" defer></script>
+  <script src="../assets/showroom-model.js" defer></script>
+</head>
+<body>
+<main class="showroom" id="showroom">
+  <header class="showroom-heading">
+    <div><span class="eyebrow">EXPLORE YOUR Rink</span><h1>外から、中から。</h1></div>
+    <span class="model-badge" id="tag">R15</span>
+  </header>
+  <div class="stage" id="stage" aria-busy="true">
+    <div class="stage-loading" id="stage-loading" role="status">3Dを準備しています</div>
+    <div class="stage-fallback" id="stage-fallback" hidden>
+      <img src="../assets/hero-front.webp" alt="Rink SAUNA バレルサウナの実物写真" width="1920" height="1081">
+      <div><p>この環境では3Dを表示できませんでした。</p><button type="button" id="retry-viewer">もう一度読み込む</button></div>
+    </div>
+    <div class="model-hotspots" aria-label="3D上の注目ポイント">
+      <button type="button" class="model-hotspot" id="hotspot-hinoki" data-feature="hinoki" aria-label="ヒノキの外壁を見る" aria-pressed="false" hidden><span aria-hidden="true">1</span><span class="hotspot-caption" aria-hidden="true">ヒノキ</span></button>
+      <button type="button" class="model-hotspot" id="hotspot-bench" data-feature="bench" aria-label="室内のベンチを見る" aria-pressed="false" hidden><span aria-hidden="true">2</span><span class="hotspot-caption" aria-hidden="true">ベンチ</span></button>
+      <button type="button" class="model-hotspot" id="hotspot-door" data-feature="door" aria-label="扉とガラスを見る" aria-pressed="false" hidden><span aria-hidden="true">3</span><span class="hotspot-caption" aria-hidden="true">扉とガラス</span></button>
+    </div>
+  </div>
+  <div class="viewer-controls">
+    <div class="control-row choices-row">
+      <div class="control-group model-group"><span class="control-label" id="size-label">モデル</span><div class="segmented" role="group" aria-labelledby="size-label"><button type="button" id="r12" data-model="R12" aria-pressed="false">R12</button><button type="button" id="r15" data-model="R15" aria-pressed="true">R15</button><button type="button" id="r18" data-model="R18" aria-pressed="false">R18</button></div></div>
+      <div class="control-group view-group"><span class="control-label" id="view-label">視点</span><div class="segmented" role="group" aria-labelledby="view-label"><button type="button" data-view="hero" aria-pressed="true">外観</button><button type="button" data-view="front" aria-pressed="false">正面</button><button type="button" data-view="inside" aria-pressed="false">中を見る</button><button type="button" data-view="room" aria-pressed="false">入室</button></div></div>
+    </div>
+    <div class="control-row tools-row">
+      <div class="camera-tools" role="group" aria-label="3Dの向きと大きさ">
+        <button type="button" data-camera="left" aria-label="左に回す"><span aria-hidden="true">↶</span></button>
+        <button type="button" data-camera="right" aria-label="右に回す"><span aria-hidden="true">↷</span></button>
+        <span class="tool-separator" aria-hidden="true"></span>
+        <button type="button" data-camera="out" aria-label="縮小する"><span aria-hidden="true">−</span></button>
+        <button type="button" data-camera="in" aria-label="拡大する"><span aria-hidden="true">＋</span></button>
+        <button type="button" class="reset-button" data-camera="reset">リセット</button>
+      </div>
+      <div class="extra-tools"><button type="button" id="door-toggle" aria-pressed="false">扉を開く</button><button type="button" id="spin-toggle" aria-pressed="false">自動回転</button></div>
+    </div>
+    <div class="feature-strip" role="group" aria-label="注目するところ">
+      <button type="button" data-feature="hinoki" aria-pressed="false"><span class="feature-number">01</span><span>ヒノキの外壁</span><span class="feature-arrow" aria-hidden="true">↗</span></button>
+      <button type="button" data-feature="bench" aria-pressed="false"><span class="feature-number">02</span><span>室内のベンチ</span><span class="feature-arrow" aria-hidden="true">↗</span></button>
+      <button type="button" data-feature="door" aria-pressed="false"><span class="feature-number">03</span><span>扉とガラス</span><span class="feature-arrow" aria-hidden="true">↗</span></button>
+    </div>
+    <p class="feature-description" id="feature-description" aria-live="polite">気になるところを選ぶと、見やすい角度に切り替わります。</p>
+  </div>
+  <footer>
+    <p id="viewer-hint">ドラッグで回転。拡大・縮小はボタンから。</p>
+    <p>外観・室内の参考3D。仕様・細部は実物写真でご確認ください。</p>
+  </footer>
+  <p class="sr-only" id="viewer-status" role="status" aria-live="polite"></p>
+</main>
+</body>
+</html>
