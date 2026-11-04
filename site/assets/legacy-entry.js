@@ -1,0 +1,1 @@
+(()=>{const e=document.currentScript.dataset,t=(new URLSearchParams(location.search).get("model")||"").toLowerCase();let r=e.target;e.r15&&["r12","r15","r18"].includes(t)&&(r=e[t]),e.permits&&"#permit-support"===location.hash&&(r=e.permits),location.replace(r)})();
