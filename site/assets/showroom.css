@@ -8,3 +8,15 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 .model-group[hidden] { display: none; }
+@font-face {
+  font-family:"Rink Model Serif";
+  src:url("fonts/NotoSerifJP-Medium-latin.woff2") format("woff2");
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+}
+.model-badge, .segmented button[data-model] {
+  font-family:"Rink Model Serif","Yu Mincho","Times New Roman",serif;
+  font-weight:500;
+  font-variant-numeric:lining-nums tabular-nums;
+}
