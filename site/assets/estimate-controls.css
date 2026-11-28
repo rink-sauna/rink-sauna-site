@@ -1,0 +1,78 @@
+/* Native controls keep keyboard navigation and mobile option pickers. */
+.estimate-widget [data-estimator] .estimate-controls .field select {
+  appearance: none;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 36px 12px 13px;
+  border: 1px solid #899d89;
+  border-radius: 7px;
+  background: #fffdf7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m3.5 6 4.5 4.5L12.5 6' fill='none' stroke='%23375140' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  box-shadow: 0 1px 2px rgb(39 64 47 / 8%);
+  color: #253e30;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: max(1rem, 16px);
+  line-height: 1.45;
+  text-overflow: ellipsis;
+}
+.estimate-widget [data-estimator] .estimate-controls select:hover:enabled {
+  border-color: #476b50;
+  background-color: #f8faf3;
+}
+.estimate-widget [data-estimator] .estimate-controls select:disabled {
+  cursor: default;
+  opacity: .6;
+}
+.estimate-widget [data-estimator] :is(select, input, button):focus-visible {
+  outline: 2px solid #846437;
+  outline-offset: 3px;
+}
+.estimate-widget [data-estimator] input[type="checkbox"] {
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  flex: none;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #81937f;
+  border-radius: 4px;
+  background: #fffdf7;
+  cursor: pointer;
+}
+.estimate-widget [data-estimator] input[type="checkbox"]:checked {
+  background-color: #2e503a;
+  border-color: #2e503a;
+}
+.estimate-widget [data-estimator] input[type="checkbox"]:checked::after {
+  content: "";
+  width: 9px;
+  height: 5px;
+  margin-top: -2px;
+  border: solid #fffdf7;
+  border-width: 0 0 2px 2px;
+  transform: rotate(-45deg);
+}
+.estimate-widget [data-estimator] input:disabled {
+  cursor: default;
+  opacity: .5;
+}
+.estimate-widget .estimate-extras .support-choice-grid label,
+.estimate-widget .estimate-bath-box {
+  border-radius: 7px;
+}
+.estimate-widget .estimate-extras .support-choice-grid label:has(input:checked),
+.estimate-widget .estimate-bath-box:has(input:checked) {
+  border-color: #819981;
+  background-color: #eaf0e5;
+}
+@media (forced-colors: active) {
+  .estimate-widget [data-estimator] .estimate-controls .field select,
+  .estimate-widget [data-estimator] input[type="checkbox"] {
+    appearance: auto;
+    background-image: none;
+  }
+  .estimate-widget [data-estimator] input[type="checkbox"]::after { display: none }
+}
+

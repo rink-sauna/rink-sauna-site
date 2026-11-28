@@ -1,0 +1,87 @@
+.glazing-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(8px, 1.15vw, 18px);
+}
+.glazing-photos figure,
+.joint-field-photo { margin: 0; min-width: 0; }
+.glazing-photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.glazing-photos figcaption,
+.joint-field-photo figcaption {
+  margin-top: .6rem;
+  color: #53614f;
+  font: 500 .77rem/1.65 var(--sans);
+}
+.nb-door-story.door-demonstration {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  grid-template-areas: "description film" "hardware film";
+  align-items: end;
+  gap: 1.25rem clamp(28px, 6vw, 85px);
+}
+.door-description { grid-area: description; }
+.door-demonstration .door-hardware {
+  grid-area: hardware;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: auto;
+  margin: 0;
+}
+.door-demonstration .door-hardware img {
+  width: 74px;
+  height: 98px;
+  object-fit: cover;
+  object-position: center;
+}
+.door-demonstration .door-hardware figcaption { margin: 0; padding: 0; }
+.door-demonstration .shoot-film {
+  grid-area: film;
+  justify-self: center;
+  align-self: center;
+  width: min(100%, 365px);
+  margin: 0;
+}
+.door-demonstration .native-clip-stage { aspect-ratio: 4 / 5; }
+.door-demonstration .native-clip-poster img {
+  width: 100%; height: 100%; max-height: none;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: center;
+}
+.shoot-film .native-clip-label { font-size: clamp(12px, 1.05vw, 15px); }
+.shoot-film .native-clip-overlay {
+  background: linear-gradient(0deg, rgb(13 26 19 / 78%), transparent 45%);
+}
+.shoot-film .native-clip-play { width: 44px; height: 44px; }
+.p-information-grid .shoot-film { margin: clamp(16px, 2vw, 28px) 0; }
+.joint-field-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(8px, 1.25vw, 18px);
+}
+.joint-field-photo img {
+  display: block; width: 100%; aspect-ratio: 4 / 5;
+  object-fit: cover; object-position: center;
+}
+.shot-details-link { display: flex; justify-content: flex-end; margin-top: 12px; }
+.shot-details-link .text-link { font-size: 13px; }
+@media (max-width: 700px) {
+  .page-home .reason-joints img {
+    height: auto;
+    aspect-ratio: 1.6;
+    object-position: 50% 52%;
+  }
+  .nb-door-story.door-demonstration {
+    grid-template-columns: 1fr;
+    grid-template-areas: "description" "film" "hardware";
+    gap: 18px;
+  }
+  .door-demonstration .shoot-film { justify-self: start; }
+  .shot-details-link { justify-content: flex-start; }
+}
